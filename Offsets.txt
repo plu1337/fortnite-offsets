@@ -1,16 +1,17 @@
 
-  BaseAddress 0x7FF7B69C0000
   UWorld 0xB59BD30
   UObject 0xB3C9A78
   Free 0xAFE310
   WorldToScreen 0x7887D1C
-  GetNameByIndex 0xFFFF800849640000
+  GetNameByIndex 0xFFFF80099CE30000
 
+  GameInstance
   GameInstance::LocalPlayers 0x38
   GameInstance::OnlineSession 0x48
   GameInstance::ReferencedObjects 0x50
   GameInstance::OnPawnControllerChangedDelegates 0x78
 
+  ActorComponent
   ActorComponent::PrimaryComponentTick 0x30
   ActorComponent::ComponentTags 0x60
   ActorComponent::AssetUserData 0x70
@@ -27,12 +28,15 @@
   ActorComponent::OnComponentDeactivated 0x8E
   ActorComponent::UCSModifiedProperties 0x90
 
+  Actor
   Actor::PrimaryActorTick 0x28
   Actor::bNetTemporary 0x58
   Actor::bNetStartup 0x58
   Actor::bOnlyRelevantToOwner 0x58
   Actor::bAlwaysRelevant 0x58
   Actor::bReplicateMovement 0x58
+  Actor::bCallPreReplication 0x58
+  Actor::bCallPreReplicationForReplay 0x58
   Actor::bHidden 0x58
   Actor::bTearOff 0x59
   Actor::bForceNetAddressable 0x59
@@ -81,7 +85,7 @@
   Actor::Instigator 0x120
   Actor::Children 0x128
   Actor::RootComponent 0x138
-  Actor::ControllingMatineeActors 0x0
+  Actor::RayTracingGroupId 0x148
   Actor::Layers 0x150
   Actor::ParentComponent 0x160
   Actor::Tags 0x170
@@ -91,6 +95,7 @@
   Actor::OnActorBeginOverlap 0x183
   Actor::OnActorEndOverlap 0x184
   Actor::OnBeginCursorOver 0x185
+  Actor::OnEndCursorOver 0x186
   Actor::OnClicked 0x187
   Actor::OnReleased 0x188
   Actor::OnInputTouchBegin 0x189
@@ -103,6 +108,7 @@
   Actor::InstanceComponents 0x1F0
   Actor::BlueprintCreatedComponents 0x200
 
+  SceneComponent
   SceneComponent::PhysicsVolume 0xB8
   SceneComponent::AttachParent 0xC0
   SceneComponent::AttachSocketName 0xC8
@@ -124,10 +130,14 @@
   SceneComponent::bHiddenInGame 0x14D
   SceneComponent::bBoundsChangeTriggersStreamingDataRebuild 0x14D
   SceneComponent::bUseAttachParentBound 0x14D
+  SceneComponent::bComputeFastLocalBounds 0x14D
+  SceneComponent::bComputeBoundsOnceForGame 0x14D
+  SceneComponent::bComputedBoundsOnceForGame 0x14D
   SceneComponent::Mobility 0x14F
   SceneComponent::DetailMode 0x150
   SceneComponent::PhysicsVolumeChangedDelegate 0x151
 
+  Pawn
   Pawn::bUseControllerRotationPitch 0x228
   Pawn::bUseControllerRotationYaw 0x228
   Pawn::bUseControllerRotationRoll 0x228
@@ -141,9 +151,13 @@
   Pawn::PlayerState 0x240
   Pawn::LastHitBy 0x250
   Pawn::Controller 0x258
+  Pawn::PreviousController 0x260
+  Pawn::ReceiveControllerChangedDelegate 0x26C
+  Pawn::ReceiveRestartedDelegate 0x26D
   Pawn::ControlInputVector 0x270
   Pawn::LastControlInputVector 0x27C
 
+  DefaultPawn
   DefaultPawn::BaseTurnRate 0x288
   DefaultPawn::BaseLookUpRate 0x28C
   DefaultPawn::MovementComponent 0x290
@@ -151,6 +165,7 @@
   DefaultPawn::MeshComponent 0x2A0
   DefaultPawn::bAddDefaultMovementBindings 0x2A8
 
+  SkinnedMeshComponent
   SkinnedMeshComponent::SkeletalMesh 0x480
   SkinnedMeshComponent::MasterPoseComponent 0x488
   SkinnedMeshComponent::SkinCacheUsage 0x490
@@ -186,6 +201,7 @@
   SkinnedMeshComponent::CachedWorldSpaceBounds 0x638
   SkinnedMeshComponent::CachedWorldToLocalTransform 0x660
 
+  SkeletalMeshComponent
   SkeletalMeshComponent::AnimBlueprintGeneratedClass 0x6C0
   SkeletalMeshComponent::AnimClass 0x6C8
   SkeletalMeshComponent::AnimScriptInstance 0x6D0
@@ -238,7 +254,9 @@
   SkeletalMeshComponent::bWaitForParallelClothTask 0x84C
   SkeletalMeshComponent::DisallowedAnimCurves 0x850
   SkeletalMeshComponent::BodySetup 0x860
+  SkeletalMeshComponent::ClothMaxDistanceScale 0x86C
   SkeletalMeshComponent::OnConstraintBroken 0x870
+  SkeletalMeshComponent::OnPlasticDeformation 0x880
   SkeletalMeshComponent::ClothingSimulationFactory 0x890
   SkeletalMeshComponent::TeleportDistanceThreshold 0x968
   SkeletalMeshComponent::TeleportRotationThreshold 0x96C
@@ -246,12 +264,14 @@
   SkeletalMeshComponent::ClothingInteractor 0x9D0
   SkeletalMeshComponent::OnAnimInitialized 0xAA0
 
+  AnimInstance
   AnimInstance::CurrentSkeleton 0x28
   AnimInstance::RootMotionMode 0x30
   AnimInstance::bUseMultiThreadedAnimationUpdate 0x31
   AnimInstance::bUsingCopyPoseFromMesh 0x31
   AnimInstance::bReceiveNotifiesFromLinkedInstances 0x31
   AnimInstance::bPropagateNotifiesToLinkedInstances 0x31
+  AnimInstance::bUseMainInstanceMontageEvaluationData 0x31
   AnimInstance::bQueueMontageEvents 0x31
   AnimInstance::OnMontageBlendingOut 0x38
   AnimInstance::OnMontageStarted 0x48
@@ -259,9 +279,12 @@
   AnimInstance::OnAllMontageInstancesEnded 0x68
   AnimInstance::NotifyQueue 0x150
   AnimInstance::ActiveAnimNotifyState 0x1C0
+  AnimInstance::ActiveAnimNotifyEventReference 0x1D0
 
+  Controller
   Controller::PlayerState 0x228
   Controller::OnInstigatedAnyDamage 0x238
+  Controller::OnPossessedPawnChanged 0x248
   Controller::StateName 0x258
   Controller::Pawn 0x260
   Controller::Character 0x270
@@ -269,6 +292,7 @@
   Controller::ControlRotation 0x298
   Controller::bAttachToPawn 0x2A4
 
+  PlayerController
   PlayerController::Player 0x2A8
   PlayerController::AcknowledgedPawn 0x2B0
   PlayerController::ControllingDirTrackInst 0x2B8
@@ -301,6 +325,7 @@
   PlayerController::bEnableMouseOverEvents 0x468
   PlayerController::bEnableTouchOverEvents 0x468
   PlayerController::bForceFeedbackEnabled 0x468
+  PlayerController::bEnableStreamingSource 0x468
   PlayerController::ForceFeedbackScale 0x46C
   PlayerController::ClickEventKeys 0x470
   PlayerController::DefaultMouseCursor 0x480
@@ -317,6 +342,7 @@
   PlayerController::bIsLocalPlayerController 0x584
   PlayerController::SpawnLocation 0x588
 
+  FortPlayerController
   FortPlayerController::OnPlayerPawnPossessed 0x728
   FortPlayerController::OnPickupCreated 0x738
   FortPlayerController::OnInputFiltered 0x778
@@ -457,7 +483,6 @@
   FortPlayerController::bBuildPreviewMirrored 0x162C
   FortPlayerController::BuildPreviewMarkerOptionalAdjustment 0x1630
   FortPlayerController::bBuildFree 0x1634
-  FortPlayerController::bUseSmartBuild 0x0
   FortPlayerController::bCraftFree 0x163C
   FortPlayerController::CurrentCostInfoType 0x1640
   FortPlayerController::CurrentBuildableClass 0x1648
@@ -554,6 +579,7 @@
   FortPlayerController::RudderDeadZone 0x2288
   FortPlayerController::RudderMaxThrottle 0x228C
   FortPlayerController::ActiveSprayInstances 0x2290
+  FortPlayerController::ActiveToyInstances 0x22A0
   FortPlayerController::ToySummonCounts 0x22B0
   FortPlayerController::bSyncPeripheralLightingWithEmoteMusic 0x2300
   FortPlayerController::bPushEmoteAudioDataToCosmeticMaterials 0x2301
@@ -568,8 +594,6 @@
   FortPlayerController::PendingEnterEditModeActor 0x2488
   FortPlayerController::RandomCharacterIndex 0x2490
   FortPlayerController::AntiAddictionPlayTimeMultiplier 0x2494
-  FortPlayerController::bSupportQuickEdit 0x0
-  FortPlayerController::bQuickEditEnabled 0x0
   FortPlayerController::bUsesWidgetForFPSDisplay 0x2498
   FortPlayerController::bShowFPS 0x2499
   FortPlayerController::OnShowFPSChange 0x24A0
@@ -595,15 +619,18 @@
   FortPlayerController::FortControllerComponent_Telemetry 0x25E8
   FortPlayerController::InventoryNetworkManagementComponent 0x25F0
   FortPlayerController::InteractionComponent 0x25F8
+  FortPlayerController::QuickEditComponent 0x2600
+  FortPlayerController::SmartBuildComponent 0x2608
   FortPlayerController::CollectionsComponent 0x2610
-  FortPlayerController::PendingExecuteInventoryItemDefinition 0x0
+  FortPlayerController::PendingExecuteInventoryItemHandle 0x2618
   FortPlayerController::QuickHealItemPickerClass 0x2648
+  FortPlayerController::OnPlayerSpawnedBuildingActor 0x2650
   FortPlayerController::MeshParentIds 0x2660
   FortPlayerController::OnToggleFullscreenMap 0x2670
   FortPlayerController::ForcedInputRotationSpeed 0x2768
   FortPlayerController::PendingClientRestartPawn 0x2770
 
-  FortAthenaSKVehicle::SkeletalMesh 0x0
+  FortAthenaSKVehicle
   FortAthenaSKVehicle::WheelOffsetFR 0x1570
   FortAthenaSKVehicle::WheelOffsetFL 0x1574
   FortAthenaSKVehicle::WheelOffsetLimitF 0x1578
@@ -637,6 +664,7 @@
   FortAthenaSKVehicle::WheelSpinDampingPerSecond 0x15E8
   FortAthenaSKVehicle::bShouldDealDamage 0x15EC
 
+  StaticMeshComponent
   StaticMeshComponent::ForcedLodModel 0x478
   StaticMeshComponent::PreviousLODLevel 0x47C
   StaticMeshComponent::MinLOD 0x480
@@ -664,6 +692,7 @@
   StaticMeshComponent::StreamingTextureData 0x4B8
   StaticMeshComponent::LightmassSettings 0x4C8
 
+  FortCameraMode
   FortCameraMode::PlayerCamera 0x28
   FortCameraMode::TransitionTime 0x30
   FortCameraMode::TransitionOutTime 0x34
@@ -674,6 +703,7 @@
   FortCameraMode::bShouldAllowBlendingWhenInactive 0x4C
   FortCameraMode::bShouldPassViewTargetCheckOnTransition 0x4C
 
+  FortCameraMode_ThirdPerson
   FortCameraMode_ThirdPerson::FOV 0x50
   FortCameraMode_ThirdPerson::CameraSpaceForwardDistance 0x54
   FortCameraMode_ThirdPerson::bClampCameraPitch 0x58
@@ -707,6 +737,7 @@
   FortCameraMode_ThirdPerson::BlendAlpha 0xE00
   FortCameraMode_ThirdPerson::PenetrationAvoidanceFeelers 0xE18
   FortCameraMode_ThirdPerson::SafeLocToAimLineBlockedPct 0xE28
+  FortCameraMode_ThirdPerson::AimLineToDesiredPosBlockedPct 0xE2C
   FortCameraMode_ThirdPerson::LastDrawDebugTime 0xE30
   FortCameraMode_ThirdPerson::LastViewTargetSpaceViewOffset 0xE34
   FortCameraMode_ThirdPerson::LastViewTargetAlignmentUp 0xE40
@@ -722,24 +753,36 @@
   FortCameraMode_ThirdPerson::bWasInVehicle 0xE88
   FortCameraMode_ThirdPerson::PreviousIgnoreActorForCameraPenetration 0xE90
 
+  FortVehicleConfigs
   FortVehicleConfigs::NumWheelsTouchingGroundForWheelsOnGround 0x28
   FortVehicleConfigs::TimeToIdleBrake 0x2C
   FortVehicleConfigs::ChangeDirBrakeDelta 0x30
   FortVehicleConfigs::VehicleSleepCounter 0x34
-  FortVehicleConfigs::VehicleMinSecondsBetweenUpdates 0x0
   FortVehicleConfigs::VehicleMinFOV 0x38
   FortVehicleConfigs::VehicleMaxFOV 0x3C
   FortVehicleConfigs::VehicleMinFOVSpeed 0x40
   FortVehicleConfigs::VehicleMaxFOVSpeed 0x44
   FortVehicleConfigs::VehicleFOVInterpSpeed 0x48
+  FortVehicleConfigs::CameraSpaceForwardDistanceOverride 0x4C
+  FortVehicleConfigs::OffroadCamShakeClass 0x50
+  FortVehicleConfigs::OffroadCameraShakeOscillationYAmplitude 0x58
+  FortVehicleConfigs::OffroadCameraShakeOscillationZAmplitude 0x5C
+  FortVehicleConfigs::OffroadCameraShakeMaxVehicleSpeed 0x60
+  FortVehicleConfigs::OffroadCameraShakeOscillationRotationAmplitude 0x64
+  FortVehicleConfigs::OffroadCameraShakeOscillationMinFrequency 0x68
+  FortVehicleConfigs::OffroadCameraShakeOscillationMaxFrequency 0x6C
+  FortVehicleConfigs::AcceleratingCamShakeClass 0x70
   FortVehicleConfigs::InteractDistanceScalar 0x78
   FortVehicleConfigs::MinFallDamageHeight 0x7C
   FortVehicleConfigs::MaxFallDamageHeight 0x80
   FortVehicleConfigs::MinFallDamage 0x84
   FortVehicleConfigs::MaxFallDamage 0x88
   FortVehicleConfigs::PlayerFallDamageMultiplier 0x8C
+  FortVehicleConfigs::bDamageFriendlyVehicles 0x90
+  FortVehicleConfigs::bDamageOtherVehicles 0x91
+  FortVehicleConfigs::bDamageOwnVehicle 0x92
+  FortVehicleConfigs::bDamageAllowedFromOtherVehicle 0x93
   FortVehicleConfigs::VehicleEjectCooldown 0x94
-  FortVehicleConfigs::CameraSpaceForwardDistanceOverride 0x4C
   FortVehicleConfigs::PlayerToSocketSweepRadius 0x98
   FortVehicleConfigs::VehicleGravity 0x9C
   FortVehicleConfigs::PlayerGravityMultiplier 0xA0
@@ -769,10 +812,24 @@
   FortVehicleConfigs::DamageableParts 0xF0
   FortVehicleConfigs::ToggleablePartNames 0x100
   FortVehicleConfigs::UnoccupiedAutoDestroyTime 0x110
-  FortVehicleConfigs::LeakFuelProjectileTemplate 0x0
   FortVehicleConfigs::HUDTopSpeed 0x138
   FortVehicleConfigs::PlayerFacingName 0x140
+  FortVehicleConfigs::WheelRotationRange 0x150
+  FortVehicleConfigs::VehicleFrontLowLateralFrictionMultiplier 0x154
+  FortVehicleConfigs::VehicleRearLowLateralFrictionMultiplier 0x158
+  FortVehicleConfigs::VehicleFrontHighLateralFrictionMultiplier 0x15C
+  FortVehicleConfigs::VehicleRearHighLateralFrictionMultiplier 0x160
+  FortVehicleConfigs::LowToHighFrictionDuration 0x164
+  FortVehicleConfigs::UphillIncline 0x168
+  FortVehicleConfigs::ReverseToForwardFrontFriction 0x16C
+  FortVehicleConfigs::ReverseToForwardRearFriction 0x170
+  FortVehicleConfigs::ReverseToForwardMaxSpeed 0x174
+  FortVehicleConfigs::TireModDataMapping 0x178
+  FortVehicleConfigs::HonkTimeMax 0x1C8
+  FortVehicleConfigs::HonkCooldownMax 0x1CC
+  FortVehicleConfigs::HonkTimePerHonk 0x1D0
 
+  FortWeapon
   FortWeapon::OnWeaponRateOfFireChanged 0x248
   FortWeapon::OnPressTrigger 0x270
   FortWeapon::OnReleaseTrigger 0x280
@@ -813,7 +870,6 @@
   FortWeapon::HitNotifyReticleImage 0x558
   FortWeapon::HitNotifyLocationReticleImage 0x560
   FortWeapon::CriticalHitNotifyLocationReticleImage 0x568
-  FortWeapon::HitNotifyDisplayDuration 0x0
   FortWeapon::ReticleCenterImage 0x570
   FortWeapon::ReticleCenterPerfectAimImage 0x578
   FortWeapon::ReticleInvalidTargetImage 0x580
@@ -968,6 +1024,7 @@
   FortWeapon::OnWeaponHudKeyActionUpdated 0x1418
   FortWeapon::HudKeyActionData 0x1428
 
+  Character
   Character::Mesh 0x288
   Character::CharacterMovement 0x290
   Character::CapsuleComponent 0x298
@@ -1007,6 +1064,7 @@
   Character::RootMotionRepMoves 0x410
   Character::RepRootMotion 0x420
 
+  FortPawn
   FortPawn::bUseBaseChanged 0x548
   FortPawn::bIgnoreNextFallingDamage 0x548
   FortPawn::bAllowDeathFromFallingDamage 0x548
@@ -1033,15 +1091,13 @@
   FortPawn::bReplicatedIsInGoop 0x54B
   FortPawn::bIsSliding 0x54B
   FortPawn::bIsSwinging 0x54B
+  FortPawn::bSwingingAttached 0x54B
+  FortPawn::SwingAttachLocation 0x54C
+  FortPawn::SwingAttachLocationUpdateDistanceThreshold 0x558
   FortPawn::bSkipAnalogJump 0x55C
   FortPawn::FootstepTraceTypeQuery 0x55D
   FortPawn::FootstepSurfaceType 0x55E
-  FortPawn::DefaultSoundIndicatorType 0x0
-  FortPawn::SoundIndicatorTypeOverrides 0x0
-  FortPawn::SoundIndicatorIconOverrides 0x0
-  FortPawn::FootstepIconOverride 0x0
-  FortPawn::SoundIndicatorTintOverride 0x0
-  FortPawn::SoundIndicatorMaxDistance 0x0
+  FortPawn::SoundIndicatorComponent 0x560
   FortPawn::UroShiftBucket 0x570
   FortPawn::bUpdateMeshComponentUpdateFlagOnServer 0x571
   FortPawn::bUROCanTieToLODs 0x571
@@ -1148,8 +1204,10 @@
   FortPawn::OnDamaged 0xAE0
   FortPawn::OnDidDamage 0xAF0
   FortPawn::FootstepBank 0xB00
+  FortPawn::CachedStepSurfaceNormal 0xB18
   FortPawn::FoleyFootstepContext 0xB28
   FortPawn::FoleyHitContext 0xB30
+  FortPawn::FortFootstepComponent 0xB38
   FortPawn::OnWeaponEquippedDelegate 0xB40
   FortPawn::OnWeaponUnEquippedDelegate 0xB50
   FortPawn::OnWeaponAttachmentChangedDelegate 0xB60
@@ -1220,6 +1278,7 @@
   FortPawn::RecordedGunshots 0x12D8
   FortPawn::OnPawnComponentAttachedEvent 0x1368
 
+  FortPlayerPawn
   FortPlayerPawn::VehicleInputStateReliable 0x13C0
   FortPlayerPawn::bIsNearSafeZoneEdge 0x13C2
   FortPlayerPawn::bPlayingSafeZoneEffects 0x13C2
@@ -1247,11 +1306,13 @@
   FortPlayerPawn::SkydivingDirectionalSpeedMultiplierCurve 0x13E8
   FortPlayerPawn::BallooningDirectionalSpeedMultiplierCurve 0x13F0
   FortPlayerPawn::DirectionalSpeedMultiplierCurve 0x13F8
+  FortPlayerPawn::LastCustomizationTimestamp 0x1400
   FortPlayerPawn::MinimumTimeBetweenSteps 0x1404
   FortPlayerPawn::LastStepTime 0x1408
   FortPlayerPawn::OnFootstepEvent 0x1410
   FortPlayerPawn::OnPawnEnterWater 0x1420
   FortPlayerPawn::OnPawnExitWater 0x1430
+  FortPlayerPawn::OnPawnExitSwinging 0x1458
   FortPlayerPawn::bIsInWaterVolume 0x1468
   FortPlayerPawn::bNotifyBlueprintWhenLandscapeTeleporting 0x1469
   FortPlayerPawn::CachedTeamControllingRC 0x146A
@@ -1329,6 +1390,7 @@
   FortPlayerPawn::bIsInAnyStorm 0x1718
   FortPlayerPawn::bIsInsideSafeZone 0x1718
   FortPlayerPawn::SafeZoneAppliedGE 0x1728
+  FortPlayerPawn::DisableSlideGameplayEffectClass 0x1758
   FortPlayerPawn::SelfReviveGameplayEffect 0x1760
   FortPlayerPawn::TeammateReviveGameplayEffect 0x1768
   FortPlayerPawn::SetByCallerReviveHealth 0x1770
@@ -1361,7 +1423,7 @@
   FortPlayerPawn::AbilityAITargets 0x1998
   FortPlayerPawn::UnableToPerformActionMontage 0x19C0
   FortPlayerPawn::UnableToPerformActionSound 0x19C8
-  FortPlayerPawn::UnableToPerformActionSound 0x19C8
+  FortPlayerPawn::MoveSoundStimulusBroadcastInterval 0x19D0
   FortPlayerPawn::EmoteStartTime 0x1AB4
   FortPlayerPawn::EmoteRandomNum 0x1AB8
   FortPlayerPawn::bPlayingPassengerToDriverAnimation 0x1AD0
@@ -1427,6 +1489,7 @@
   FortPlayerPawn::OnCrouchEndSound 0x2700
   FortPlayerPawn::FootstepBankOverride 0x2708
   FortPlayerPawn::OriginalFootstepBank 0x2710
+  FortPlayerPawn::CachedFootStepIndex 0x2718
   FortPlayerPawn::AnimSetOverride 0x2720
   FortPlayerPawn::AnimLayersOverride 0x2728
   FortPlayerPawn::PreviousAnimLayersOverride 0x2738
@@ -1463,8 +1526,9 @@
   FortPlayerPawn::OnRevivedFromDBNODelegate 0x2B98
   FortPlayerPawn::OnNewPlayerState 0x2BA8
   FortPlayerPawn::OnAbilitySystemComponentInitialized 0x2BB8
-  FortPlayerPawn::OnPreDetachAbilitySystemComponent 0x0
+  FortPlayerPawn::OnPreInvalidateAbilitySystemComponent 0x2BC8
   FortPlayerPawn::OnFinishedCharacterCustomization 0x2BF8
+  FortPlayerPawn::OnCrouchInputJustPressed 0x2C08
   FortPlayerPawn::CustomizationAssetLoader 0x2C18
   FortPlayerPawn::SpawnParticles 0x2C40
   FortPlayerPawn::SpawnSound 0x2C48
@@ -1553,6 +1617,7 @@
   FortPlayerPawn::MeleeAbilityCooldown 0x3458
   FortPlayerPawn::bDisallowInterrogation 0x345C
   FortPlayerPawn::bDisallowInterrogationOnNPC 0x345D
+  FortPlayerPawn::bDisallowInterrogationCreative 0x345E
   FortPlayerPawn::bHideBodyOnDeathRequested 0x345F
   FortPlayerPawn::ControlledRCPawn 0x3460
   FortPlayerPawn::StoredControlRotation 0x3468
@@ -1584,7 +1649,10 @@
   FortPlayerPawn::ConsecutiveWeakSpotResourceBonus 0x3680
   FortPlayerPawn::LastHitWeakSpotResourceBonus 0x36A8
   FortPlayerPawn::CustomInteractionWidget 0x36D8
+  FortPlayerPawn::ConvertComponent 0x36F0
+  FortPlayerPawn::AffiliationComponent 0x36F8
 
+  FortItemDefinition
   FortItemDefinition::OnItemCountChanged 0x48
   FortItemDefinition::Rarity 0x68
   FortItemDefinition::ItemType 0x69
@@ -1627,6 +1695,7 @@
   FortItemDefinition::FrontendPreviewMeshOverride 0x300
   FortItemDefinition::FrontendPreviewSkeletalMeshOverride 0x328
 
+  World
   World::PersistentLevel 0x30
   World::NetDriver 0x38
   World::LineBatcher 0x40
@@ -1657,12 +1726,14 @@
   World::CanvasForRenderingToTarget 0x1A8
   World::CanvasForDrawMaterialToRenderTarget 0x1B0
   World::PhysicsField 0x228
+  World::LWILastAssignedUID 0x230
   World::ComponentsThatNeedPreEndOfFrameSync 0x238
   World::ComponentsThatNeedEndOfFrameUpdate 0x288
   World::ComponentsThatNeedEndOfFrameUpdate_OnGameThread 0x298
   World::WorldComposition 0x618
   World::PSCPool 0x6C8
 
+  BuildingWeakSpot
   BuildingWeakSpot::ParentObject 0x248
   BuildingWeakSpot::bHit 0x250
   BuildingWeakSpot::bFadeOut 0x250
@@ -1674,6 +1745,7 @@
   BuildingWeakSpot::HitNormal 0x26C
   BuildingWeakSpot::PhysicalSurfaceType 0x278
 
+  FortPlayerControllerAthena
   FortPlayerControllerAthena::FireAbilityToWeaponSwitchTime 0x33C8
   FortPlayerControllerAthena::OnAircraftStateChange 0x33D8
   FortPlayerControllerAthena::OnItemDropSpawnedDelegate 0x33E8
@@ -1774,7 +1846,6 @@
   FortPlayerControllerAthena::bIsAllowedToPublish 0x3958
   FortPlayerControllerAthena::GamepadSettingsAssetPtr 0x3960
   FortPlayerControllerAthena::TeamMemberIndicatorColor 0x39A0
-  FortPlayerControllerAthena::bImprovedDBNOEnabled 0x0
   FortPlayerControllerAthena::bMatchStatsForPlayerSent 0x39D8
   FortPlayerControllerAthena::bAddedBookProgressStatsToGamemode 0x39D9
   FortPlayerControllerAthena::bHasSentMatchEndedQuestProgress 0x39DA
@@ -1793,11 +1864,6 @@
   FortPlayerControllerAthena::bUseTrapPicker 0x3C1D
   FortPlayerControllerAthena::DoubleTapEditTime 0x3C80
   FortPlayerControllerAthena::MatchReport 0x3C88
-  FortPlayerControllerAthena::QuickEditWallPatterns 0x0
-  FortPlayerControllerAthena::QuickEditFloorPatterns 0x0
-  FortPlayerControllerAthena::QuickEditRoofPatterns 0x0
-  FortPlayerControllerAthena::QuickEditStairsPatterns 0x0
-  FortPlayerControllerAthena::QuickEditStairsPatterns 0x0
   FortPlayerControllerAthena::MinimapIndicatorClass 0x3CA0
   FortPlayerControllerAthena::MinimapChallengeIndicatorClass 0x3CA8
   FortPlayerControllerAthena::MinimapChallengeIndicators 0x3CB0
@@ -1815,6 +1881,7 @@
   FortPlayerControllerAthena::CreativePlotSessionData 0x3E00
   FortPlayerControllerAthena::OwnedPortal 0x3E18
   FortPlayerControllerAthena::OwnedPartyRiftPortal 0x3E20
+  FortPlayerControllerAthena::OnHUDMessageToggled 0x3E70
   FortPlayerControllerAthena::CachedPurchasedItems 0x3E80
   FortPlayerControllerAthena::CurrentPlayset 0x3EA8
   FortPlayerControllerAthena::DestructedBuildingInGridTimeoutOverride 0x3EB0
@@ -1852,8 +1919,10 @@
   FortPlayerControllerAthena::CreativeItemToRemoveWhenAddingInventoryItem 0x4160
   FortPlayerControllerAthena::PrimaryQuickBarSlotItemGuids 0x4188
   FortPlayerControllerAthena::bIgnoreSpectatorViewRotation 0x4258
-  FortPlayerControllerAthena:: 0x0
+  FortPlayerControllerAthena::ClipHandler 0x4260
+  FortPlayerControllerAthena::bIgnorePlayerInfoAbandonStateForSpecialEventRtmm 0x4270
 
+  FortPlayerPawnAthena
   FortPlayerPawnAthena::OnInteractionFailedCallback 0x3718
   FortPlayerPawnAthena::ItemInteractionActor 0x3728
   FortPlayerPawnAthena::CurrentPawnSquaredSpeed 0x3740
@@ -1948,6 +2017,7 @@
   FortPlayerPawnAthena::LastHealthPostProcessWeight 0x40F4
   FortPlayerPawnAthena::HealthPostProcessStartTime 0x40F8
   FortPlayerPawnAthena::HealthPostProcessMuteTime 0x40FC
+  FortPlayerPawnAthena::CustomDepthMatchedComponents 0x4160
   FortPlayerPawnAthena::bIsCreativeGhostModeActivated 0x4174
   FortPlayerPawnAthena::bIsCreativeModeratorModeActivated 0x4175
   FortPlayerPawnAthena::SkinWeightManager 0x4198
@@ -1957,10 +2027,24 @@
   FortPlayerPawnAthena::DamageForceFeedback 0x42A8
   FortPlayerPawnAthena::DamageCameraShakeClass 0x42B0
   FortPlayerPawnAthena::DamageTagsExcludedFromCameraShake 0x42B8
-  FortPlayerPawnAthena::ConvertComponent 0x0
-  FortPlayerPawnAthena::AffiliationComponent 0x0
   FortPlayerPawnAthena::bUpdateSharedReplicationWhileAttached 0x42F0
+  FortPlayerPawnAthena::BP_RotationSpeedWhenTurnedOffByAnim 0x42F4
+  FortPlayerPawnAthena::BP_RotationSpeedOnDetach 0x42F8
+  FortPlayerPawnAthena::BP_MaxRotationSpeedWhenAttached 0x42FC
+  FortPlayerPawnAthena::BP_TimeToReachMaxRotationSpeed 0x4300
+  FortPlayerPawnAthena::BP_AddedRotationInfluenceFromForwardVectorOnAttach 0x4304
+  FortPlayerPawnAthena::YawNegative90 0x4308
+  FortPlayerPawnAthena::CallerID_update_mesh_rotation 0x4318
+  FortPlayerPawnAthena::AttachPointNormalizeTolerance 0x4328
+  FortPlayerPawnAthena::ForwardProjectedNormalizeTolerance 0x432C
+  FortPlayerPawnAthena::Swinging_AttachBGA 0x4330
+  FortPlayerPawnAthena::Swinging_RightVec 0x4338
+  FortPlayerPawnAthena::Swinging_LastAttachTime 0x4344
+  FortPlayerPawnAthena::bSwingingShouldRotateMesh 0x4348
+  FortPlayerPawnAthena::bSwinging_UseProgrammaticRotation 0x4349
+  FortPlayerPawnAthena::bImprovedDBNOEnabled 0x434A
 
+  FortPlayerPawnStats
   FortPlayerPawnStats::MaxJumpTime 0xB8
   FortPlayerPawnStats::MaxStamina 0xBC
   FortPlayerPawnStats::StaminaRegenRate 0xC0
@@ -1968,6 +2052,7 @@
   FortPlayerPawnStats::SprintingStaminaExpenditureRate 0xC8
   FortPlayerPawnStats::PersonalVehicleFallingDamageTableRow 0xCC
 
+  PlayerCameraManager
   PlayerCameraManager::PCOwner 0x220
   PlayerCameraManager::TransformComponent 0x228
   PlayerCameraManager::DefaultFOV 0x238
@@ -2005,6 +2090,7 @@
   PlayerCameraManager::ViewRollMax 0x29D8
   PlayerCameraManager::ServerUpdateCameraTimeout 0x29E0
 
+  FortProjectileAthena
   FortProjectileAthena::FireStartLoc 0x8C8
   FortProjectileAthena::PawnHitResult 0x8E0
   FortProjectileAthena::bExplodeOnPawnHit 0x97C
@@ -2015,6 +2101,7 @@
   FortProjectileAthena::PredictedHitActor 0x9D8
   FortProjectileAthena::PredictedHitComp 0x9E0
 
+  FortPickup
   FortPickup::bUsePickupWidget 0x230
   FortPickup::bSuppressInteractionWidget 0x231
   FortPickup::bWeaponsCanBeAutoPickups 0x232
@@ -2033,6 +2120,7 @@
   FortPickup::PickupSourceTypeFlags 0x4B8
   FortPickup::PickupSpawnSource 0x4B9
   FortPickup::OptionalOwnerID 0x4BA
+  FortPickup::DropperID 0x4BC
   FortPickup::OptionalMissionGuid 0x4C0
   FortPickup::PrimaryPickupDummyItem 0x4D0
   FortPickup::PickupEffectBlueprint 0x4D8
@@ -2061,15 +2149,12 @@
   FortPickup::MinimapIndicator 0x548
   FortPickup::HUDLabel 0x550
   FortPickup::bRandomRotation 0x61C
+  FortPickup::VolumeAtSpawn 0x620
   FortPickup::DespawnTime 0x640
   FortPickup::StormDespawnTime 0x644
   FortPickup::StartSimulatingTime 0x648
 
-  GameInstance::LocalPlayers 0x38
-  GameInstance::OnlineSession 0x48
-  GameInstance::ReferencedObjects 0x50
-  GameInstance::OnPawnControllerChangedDelegates 0x78
-
+  FortPlayerStateAthena
   FortPlayerStateAthena::PersonalLobbyAction 0xDBC
   FortPlayerStateAthena::RespawnData 0xDC0
   FortPlayerStateAthena::ReplicatedTeamMemberState 0xDF8
@@ -2107,6 +2192,7 @@
   FortPlayerStateAthena::TeamAverageDamageChanged 0x1020
   FortPlayerStateAthena::MatchAbandonStateChanged 0x1030
   FortPlayerStateAthena::FriendsInSquad 0x1040
+  FortPlayerStateAthena::FriendsInMatch 0x1050
   FortPlayerStateAthena::FriendsInSquadAtPartnerCafe 0x10A0
   FortPlayerStateAthena::StormSurgeEffectCount 0x1100
   FortPlayerStateAthena::TeamAverageDamageDealt 0x1102
@@ -2147,3 +2233,278 @@
   FortPlayerStateAthena::bInventoriesInNonPersistenceMode 0x1628
   FortPlayerStateAthena::bInventoriesInLocalOnlyMode 0x1629
 
+  FortItemEntry
+  FortItemEntry::Count 0xC
+  FortItemEntry::PreviousCount 0x10
+  FortItemEntry::ItemDefinition 0x18
+  FortItemEntry::OrderIndex 0x20
+  FortItemEntry::Durability 0x24
+  FortItemEntry::Level 0x28
+  FortItemEntry::LoadedAmmo 0x2C
+  FortItemEntry::PhantomReserveAmmo 0x30
+  FortItemEntry::AlterationDefinitions 0x38
+  FortItemEntry::SavedWeaponModSlots 0x48
+  FortItemEntry::ItemSource 0x58
+  FortItemEntry::ItemGuid 0x68
+  FortItemEntry::TrackerGuid 0x78
+  FortItemEntry::ItemVariantGuid 0x88
+  FortItemEntry::ControlOverride 0x98
+  FortItemEntry::inventory_overflow_date 0x9C
+  FortItemEntry::bWasGifted 0x9D
+  FortItemEntry::bIsReplicatedCopy 0x9E
+  FortItemEntry::bIsDirty 0x9F
+  FortItemEntry::bUpdateStatsOnCollection 0xA0
+  FortItemEntry::GiftingInfo 0xA8
+  FortItemEntry::StateValues 0xD0
+  FortItemEntry::ParentInventory 0xE0
+  FortItemEntry::GameplayAbilitySpecHandle 0xE8
+  FortItemEntry::AlterationInstances 0xF0
+  FortItemEntry::WeaponModSlots 0x100
+  FortItemEntry::WrapOverride 0x110
+  FortItemEntry::GenericAttributeValues 0x138
+  FortItemEntry::PickupVariantIndex 0x198
+  FortItemEntry::ItemVariantDataMappingIndex 0x19C
+
+  ProceduralScatterActorContentVariation
+  ProceduralScatterActorContentVariation::ActorClass 0x98
+
+  FortWeaponStats
+  [!] Class doesn't exists
+
+  FortWeaponItemDefinition
+  FortWeaponItemDefinition::WeaponActorClass 0x840
+  FortWeaponItemDefinition::WeaponMeshOverride 0x868
+  FortWeaponItemDefinition::IntrinsicOverrideWrap 0x890
+  FortWeaponItemDefinition::WeaponStatHandle 0x8B8
+  FortWeaponItemDefinition::bRechargeAmmoToClip 0x8C8
+  FortWeaponItemDefinition::WeaponRechargeAmmoRate 0x8D0
+  FortWeaponItemDefinition::WeaponRechargeAmmoQuantity 0x8F8
+  FortWeaponItemDefinition::AbilitySet 0x920
+  FortWeaponItemDefinition::AlterationSlotsLoadoutRow 0x948
+  FortWeaponItemDefinition::BaselineAlterationSlotsLoadoutRow 0x950
+  FortWeaponItemDefinition::BaseAlteration 0x958
+  FortWeaponItemDefinition::BaseCosmeticAlteration 0x980
+  FortWeaponItemDefinition::WeaponModSlots 0x9A8
+  FortWeaponItemDefinition::PrimaryFireAbility 0x9B8
+  FortWeaponItemDefinition::SecondaryFireAbility 0x9E0
+  FortWeaponItemDefinition::ReloadAbility 0xA08
+  FortWeaponItemDefinition::OnHitAbility 0xA30
+  FortWeaponItemDefinition::EquippedAbilities 0xA58
+  FortWeaponItemDefinition::EquippedAbilitySet 0xA68
+  FortWeaponItemDefinition::EquippedCharacterParts 0xA90
+  FortWeaponItemDefinition::AmmoData 0xAA0
+  FortWeaponItemDefinition::AdditionalDataFields 0xAC8
+  FortWeaponItemDefinition::LowAmmoPercentage 0xAD8
+  FortWeaponItemDefinition::TriggerType 0xADC
+  FortWeaponItemDefinition::SecondaryTriggerType 0xADD
+  FortWeaponItemDefinition::DisplayTier 0xADE
+  FortWeaponItemDefinition::bUsesPhantomReserveAmmo 0xADF
+  FortWeaponItemDefinition::bUsesCustomAmmoType 0xADF
+  FortWeaponItemDefinition::bAllowSecondaryFireToInterruptPrimary 0xADF
+  FortWeaponItemDefinition::bAllowTargetingDuringReload 0xADF
+  FortWeaponItemDefinition::bTargetingPreventsReload 0xADF
+  FortWeaponItemDefinition::bCanFireWhileInstigatorTethered 0xADF
+  FortWeaponItemDefinition::bCanFireWhileNotTargetedInVehicle 0xADF
+  FortWeaponItemDefinition::bAlwaysChargeUpToMin 0xADF
+  FortWeaponItemDefinition::bNoFireOnReleaseBeforeMinChargeTime 0xAE0
+  FortWeaponItemDefinition::bEndAbilityOnChargeEnd 0xAE0
+  FortWeaponItemDefinition::bUpdateLastFireTimeOnDischarge 0xAE0
+  FortWeaponItemDefinition::bReticleCornerOutsideSpreadRadius 0xAE0
+  FortWeaponItemDefinition::bValidForLastEquipped 0xAE0
+  FortWeaponItemDefinition::bRequestClientPreload 0xAE0
+  FortWeaponItemDefinition::bEnableWeaponMeshOverrideUpdates 0xAE0
+  FortWeaponItemDefinition::HitNotifyDuration 0xAE4
+  FortWeaponItemDefinition::ReticleImage 0xAE8
+  FortWeaponItemDefinition::ReticleCornerAngles 0xB10
+  FortWeaponItemDefinition::ReticleCenterImage 0xB20
+  FortWeaponItemDefinition::ReticleCenterPerfectAimImage 0xB48
+  FortWeaponItemDefinition::ReticleCenterImageOffset 0xB70
+  FortWeaponItemDefinition::ReticleInvalidTargetImage 0xB78
+  FortWeaponItemDefinition::AnalyticTags 0xBA0
+  FortWeaponItemDefinition::PlayerGrantedGameplayTags 0xBC0
+  FortWeaponItemDefinition::ActualAnalyticFNames 0xBE0
+  FortWeaponItemDefinition::RequiredWeaponParent 0xBF0
+  FortWeaponItemDefinition::CreativeTagsHelper 0xC18
+  FortWeaponItemDefinition::AdditionalData 0xC28
+
+  FortBaseWeaponStats
+  FortBaseWeaponStats::BaseLevel 0xC
+  FortBaseWeaponStats::NamedWeightRow 0x10
+  FortBaseWeaponStats::DmgPB 0x18
+  FortBaseWeaponStats::DmgMid 0x1C
+  FortBaseWeaponStats::DmgLong 0x20
+  FortBaseWeaponStats::DmgMaxRange 0x24
+  FortBaseWeaponStats::EnvDmgPB 0x28
+  FortBaseWeaponStats::EnvDmgMid 0x2C
+  FortBaseWeaponStats::EnvDmgLong 0x30
+  FortBaseWeaponStats::EnvDmgMaxRange 0x34
+  FortBaseWeaponStats::ImpactDmgPB 0x38
+  FortBaseWeaponStats::ImpactDmgMid 0x3C
+  FortBaseWeaponStats::ImpactDmgLong 0x40
+  FortBaseWeaponStats::ImpactDmgMaxRange 0x44
+  FortBaseWeaponStats::bForceControl 0x48
+  FortBaseWeaponStats::RngPB 0x4C
+  FortBaseWeaponStats::RngMid 0x50
+  FortBaseWeaponStats::RngLong 0x54
+  FortBaseWeaponStats::RngMax 0x58
+  FortBaseWeaponStats::DmgScaleTable 0x60
+  FortBaseWeaponStats::DmgScaleTableRow 0x68
+  FortBaseWeaponStats::DmgScale 0x70
+  FortBaseWeaponStats::EnvDmgScaleTable 0x78
+  FortBaseWeaponStats::EnvDmgScaleTableRow 0x80
+  FortBaseWeaponStats::EnvDmgScale 0x88
+  FortBaseWeaponStats::ImpactDmgScaleTable 0x90
+  FortBaseWeaponStats::ImpactDmgScaleTableRow 0x98
+  FortBaseWeaponStats::ImpactDmgScale 0xA0
+  FortBaseWeaponStats::SurfaceRatioRowName 0xA4
+  FortBaseWeaponStats::DamageZone_Light 0xAC
+  FortBaseWeaponStats::DamageZone_Normal 0xB0
+  FortBaseWeaponStats::DamageZone_Critical 0xB4
+  FortBaseWeaponStats::DamageZone_Vulnerability 0xB8
+  FortBaseWeaponStats::KnockbackMagnitude 0xBC
+  FortBaseWeaponStats::MidRangeKnockbackMagnitude 0xC0
+  FortBaseWeaponStats::LongRangeKnockbackMagnitude 0xC4
+  FortBaseWeaponStats::KnockbackZAngle 0xC8
+  FortBaseWeaponStats::ShortRangeHitImpulseMagnitude 0xCC
+  FortBaseWeaponStats::MidRangeHitImpulseMagnitude 0xD0
+  FortBaseWeaponStats::LongRangeHitImpulseMagnitude 0xD4
+  FortBaseWeaponStats::HitImpulseZBias 0xD8
+  FortBaseWeaponStats::StunTime 0xDC
+  FortBaseWeaponStats::StunScale 0xE0
+  FortBaseWeaponStats::Durability 0xE8
+  FortBaseWeaponStats::DurabilityRowName 0xF0
+  FortBaseWeaponStats::DurabilityScale 0xF8
+  FortBaseWeaponStats::DurabilityPerUse 0xFC
+  FortBaseWeaponStats::FullChargeDurabilityPerUse 0x100
+  FortBaseWeaponStats::DiceCritChance 0x104
+  FortBaseWeaponStats::DiceCritDamageMultiplier 0x108
+  FortBaseWeaponStats::ReloadTime 0x10C
+  FortBaseWeaponStats::ReloadScale 0x110
+  FortBaseWeaponStats::ReloadType 0x114
+  FortBaseWeaponStats::bAllowReloadInterrupt 0x115
+  FortBaseWeaponStats::bReloadInterruptIsImmediate 0x116
+  FortBaseWeaponStats::NumIndividualBulletsToReload 0x118
+  FortBaseWeaponStats::ClipSize 0x11C
+  FortBaseWeaponStats::ClipScale 0x120
+  FortBaseWeaponStats::InitialClips 0x124
+  FortBaseWeaponStats::CartridgePerFire 0x128
+  FortBaseWeaponStats::AmmoCostPerFire 0x12C
+  FortBaseWeaponStats::MaxAmmoCostPerFire 0x130
+  FortBaseWeaponStats::MinChargeTime 0x134
+  FortBaseWeaponStats::MaxChargeTime 0x138
+  FortBaseWeaponStats::ChargeDownTime 0x13C
+  FortBaseWeaponStats::bAutoDischarge 0x140
+  FortBaseWeaponStats::MaxChargeTimeUntilDischarge 0x144
+  FortBaseWeaponStats::MinChargeDamageMultiplier 0x148
+  FortBaseWeaponStats::MaxChargeDamageMultiplier 0x14C
+  FortBaseWeaponStats::ChargeDamageMultiplierCurve 0x150
+  FortBaseWeaponStats::EquipAnimRate 0x158
+  FortBaseWeaponStats::QuickBarSlotCooldownDuration 0x15C
+
+  FortRangedWeaponStats
+  FortRangedWeaponStats::Spread 0x16C
+  FortRangedWeaponStats::OverrideBaseSpread 0x170
+  FortRangedWeaponStats::SpreadDownsights 0x174
+  FortRangedWeaponStats::StandingStillSpreadMultiplier 0x178
+  FortRangedWeaponStats::AthenaCrouchingSpreadMultiplier 0x17C
+  FortRangedWeaponStats::AthenaSlidingSpreadMultiplier 0x180
+  FortRangedWeaponStats::AthenaJumpingFallingSpreadMultiplier 0x184
+  FortRangedWeaponStats::AthenaSprintingSpreadMultiplier 0x188
+  FortRangedWeaponStats::MinSpeedForSpreadMultiplier 0x18C
+  FortRangedWeaponStats::MaxSpeedForSpreadMultiplier 0x190
+  FortRangedWeaponStats::SpreadDownsightsAdditionalCooldownTime 0x194
+  FortRangedWeaponStats::SpreadExponent 0x198
+  FortRangedWeaponStats::HeatX1 0x19C
+  FortRangedWeaponStats::HeatY1 0x1A0
+  FortRangedWeaponStats::HeatX2 0x1A4
+  FortRangedWeaponStats::HeatY2 0x1A8
+  FortRangedWeaponStats::HeatX3 0x1AC
+  FortRangedWeaponStats::HeatY3 0x1B0
+  FortRangedWeaponStats::HeatXScale 0x1B4
+  FortRangedWeaponStats::HeatYScale 0x1B8
+  FortRangedWeaponStats::CoolX1 0x1BC
+  FortRangedWeaponStats::CoolY1 0x1C0
+  FortRangedWeaponStats::CoolX2 0x1C4
+  FortRangedWeaponStats::CoolY2 0x1C8
+  FortRangedWeaponStats::CoolX3 0x1CC
+  FortRangedWeaponStats::CoolY3 0x1D0
+  FortRangedWeaponStats::CoolXScale 0x1D4
+  FortRangedWeaponStats::CoolYScale 0x1D8
+  FortRangedWeaponStats::PerfectAimCooldown 0x1DC
+  FortRangedWeaponStats::BulletsPerCartridge 0x1E0
+  FortRangedWeaponStats::FiringRate 0x1E4
+  FortRangedWeaponStats::ROFScale 0x1E8
+  FortRangedWeaponStats::BurstFiringRate 0x1EC
+  FortRangedWeaponStats::FiringRateDownsightsMultiplier 0x1F0
+  FortRangedWeaponStats::AutofireRange 0x1F4
+  FortRangedWeaponStats::AutofireAcquisitionDelay 0x1F8
+  FortRangedWeaponStats::AutofireDBNOAcquisitionDelay 0x1FC
+  FortRangedWeaponStats::AutofireAcquisitionRechargeTime 0x200
+  FortRangedWeaponStats::AutofireReleaseTime 0x204
+  FortRangedWeaponStats::AutofireCooldown 0x208
+  FortRangedWeaponStats::RecoilVert 0x20C
+  FortRangedWeaponStats::RecoilVertScale 0x210
+  FortRangedWeaponStats::RecoilVertScaleGamepad 0x214
+  FortRangedWeaponStats::VertRecoilDownChance 0x218
+  FortRangedWeaponStats::RecoilHoriz 0x21C
+  FortRangedWeaponStats::RecoilHorizScale 0x220
+  FortRangedWeaponStats::RecoilHorizScaleGamepad 0x224
+  FortRangedWeaponStats::RecoilInterpSpeed 0x228
+  FortRangedWeaponStats::RecoilRecoveryInterpSpeed 0x22C
+  FortRangedWeaponStats::RecoilRecoveryDelay 0x230
+  FortRangedWeaponStats::RecoilRecoveryFraction 0x234
+  FortRangedWeaponStats::RecoilDownsightsMultiplier 0x238
+  FortRangedWeaponStats::AthenaRecoilMagnitudeMin 0x23C
+  FortRangedWeaponStats::AthenaRecoilMagnitudeMax 0x240
+  FortRangedWeaponStats::AthenaRecoilMagnitudeScale 0x244
+  FortRangedWeaponStats::AthenaRecoilAngleMin 0x248
+  FortRangedWeaponStats::AthenaRecoilAngleMax 0x24C
+  FortRangedWeaponStats::AthenaRecoilRollMagnitudeMin 0x250
+  FortRangedWeaponStats::AthenaRecoilRollMagnitudeMax 0x254
+  FortRangedWeaponStats::AthenaRecoilInterpSpeed 0x258
+  FortRangedWeaponStats::AthenaRecoilRecoveryInterpSpeed 0x25C
+  FortRangedWeaponStats::AthenaRecoilDownsightsMultiplier 0x260
+  FortRangedWeaponStats::AthenaRecoilHipFireMultiplier 0x264
+  FortRangedWeaponStats::PitchLimitForPerBulletRecoil 0x268
+  FortRangedWeaponStats::AthenaAimAssistRange 0x26C
+  FortRangedWeaponStats::ADSTransitionInTime 0x270
+  FortRangedWeaponStats::ADSTransitionOutTime 0x274
+  FortRangedWeaponStats::MaxSpareAmmo 0x278
+  FortRangedWeaponStats::BulletsPerTracer 0x27C
+  FortRangedWeaponStats::AIDelayBeforeFiringMin 0x280
+  FortRangedWeaponStats::AIDelayBeforeFiringMax 0x284
+  FortRangedWeaponStats::AIFireDurationMin 0x288
+  FortRangedWeaponStats::AIFireDurationMax 0x28C
+  FortRangedWeaponStats::AIMinSpreadDuration 0x290
+  FortRangedWeaponStats::AIMaxSpreadDuration 0x294
+  FortRangedWeaponStats::AIDurationSpreadMultiplier 0x298
+  FortRangedWeaponStats::AIAdditionalSpreadForTargetMovingLaterally 0x29C
+  FortRangedWeaponStats::AIAthenaHearFiringNoiseRange 0x2A0
+  FortRangedWeaponStats::EQSDensity 0x2A4
+  FortRangedWeaponStats::MinApproachRange 0x2A8
+  FortRangedWeaponStats::MinActualRange 0x2AC
+  FortRangedWeaponStats::MinPreferredRange 0x2B0
+  FortRangedWeaponStats::MinPreferredRangeEQS 0x2B4
+  FortRangedWeaponStats::MaxPreferredRangeEQS 0x2B8
+  FortRangedWeaponStats::MaxPreferredRange 0x2BC
+  FortRangedWeaponStats::MaxActualRange 0x2C0
+  FortRangedWeaponStats::MaxApproachRange 0x2C4
+  FortRangedWeaponStats::RangeToAutomaticallyAddEnemyPawnGoals 0x2C8
+  FortRangedWeaponStats::SweepRadius 0x2CC
+  FortRangedWeaponStats::AutoReloadDelayOverride 0x2D0
+  FortRangedWeaponStats::OverheatingMaxValue 0x2D4
+  FortRangedWeaponStats::OverheatHeatingValue 0x2D8
+  FortRangedWeaponStats::FullChargeOverheatHeatingValue 0x2DC
+  FortRangedWeaponStats::OverheatingCoolingValue 0x2E0
+  FortRangedWeaponStats::FullyOverheatedCoolingValue 0x2E4
+  FortRangedWeaponStats::HeatingCooldownDelay 0x2E8
+  FortRangedWeaponStats::OverheatedCooldownDelay 0x2EC
+  FortRangedWeaponStats::bCoolOverheatWhileCharging 0x2F0
+  FortRangedWeaponStats::FortHomingTurnSpeedMin 0x2F4
+  FortRangedWeaponStats::FortHomingTurnSpeedMax 0x2F8
+  FortRangedWeaponStats::FortHomingTimeUntilMaxTurnSpeed 0x2FC
+  FortRangedWeaponStats::AimAssistPullStrengthMultiplier 0x300
+  FortRangedWeaponStats::AimAssistSlowStrengthMultiplier 0x304
+  FortRangedWeaponStats::BulletsPerBulletFireFX 0x308
+  FortRangedWeaponStats::PerBulletRecoil 0x310
+  
