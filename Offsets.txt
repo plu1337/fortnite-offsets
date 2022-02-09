@@ -1,3 +1,4 @@
+  "version":"++Fortnite+Release-19.20
 
   UWorld 0xB613240
   UObject 0xB4427E0
@@ -4351,3 +4352,7 @@
   FortPlayerDBNOEnterParams
   FortPlayerDBNOEnterParams::KilledPlayer 0x28
   FortPlayerDBNOEnterParams::KilledBy 0x30
+
+  FortReleaseVersionManager
+  FortReleaseVersionManager::CurrentVersion 0x60
+  FortReleaseVersionManager::AllVersions 0x68
