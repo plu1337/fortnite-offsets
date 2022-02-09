@@ -1,4 +1,4 @@
-  "version":"++Fortnite+Release-19.20
+  "version":"++Fortnite+Release-19.20"
 
   UWorld 0xB613240
   UObject 0xB4427E0
