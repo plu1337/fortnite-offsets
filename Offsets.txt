@@ -5,6 +5,8 @@
   Free 0xB1EB28
   WorldToScreen 0x7AED98C
   GetNameByIndex 0xC97754
+  BoneArray 0x4B8
+  GetBoneWithRotation 0x1C0
 
   GameInstance
   GameInstance::LocalPlayers 0x38
