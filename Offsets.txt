@@ -3,7 +3,7 @@
 
   UWorld 0xC525CD8
   Free 0xF751A0
-  FNamePool: 0xC562740
+  FNamePool 0xC562740
   GetNameByIndex 0xD59780
 
   GameInstance
